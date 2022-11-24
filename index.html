@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гузь Степан - Резюме</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
+        *{
+            --font-main: 'Source Sans Pro', sans-serif;
+            --font-header: 'Source Sans Pro', sans-serif;
+            --font-main-size: 12pt;
+
+            --header-font-size-h1: 24pt;
+            --header-font-size-h2: 20pt;
+            --header-font-size-h3: 16pt;
+            --header-font-size-h4: 12pt;
+
+            --color-lightblack: #101010;
+
+            font-family: var(--font-main);
+            font-size: var(--font-main-size);
+        }
+
+        h1,h2,h3,h4,h5,h6{
+            font-family: var(--font-header);
+        }
+        
+        /* Header */
+        header .name{
+            grid-area: name;
+        }
+        header .contacts{
+            grid-area: contacts;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+            header .contacts a, 
+            header .contacts a:hover, 
+            header .contacts a:visited{
+                display: block;
+                color: black;
+                width: 40%;
+            }
+            header .contacts a::before{
+                display: inline-block;
+                content: "mail";
+                margin-right: 8px;
+                font-family: 'Material Symbols Outlined';
+                vertical-align: middle;
+                text-decoration: none !important;
+                font-variation-settings:
+                    'FILL' 0,
+                    'wght' 400,
+                    'GRAD' 0,
+                    'opsz' 20
+            }
+            header .contacts a.phone::before{
+                content: "phone";
+            }
+
+        header .photo{
+            grid-area: photo;
+            justify-self: end;
+            align-self: center;
+        }
+        header .photo img{
+            border-radius: 100%;
+            max-height: 150px;
+        }
+
+        /* Main content */
+        main section{
+            text-align: justify;
+        }
+        dt{
+            font-weight: bold;
+        }
+
+        /* Responsive design */
+        body{
+            padding: 16px;
+            max-width: 800px;
+            margin: auto;
+        }
+        header{
+            display: grid;
+            grid-template:  "photo name"
+                            "photo contacts" / auto 2fr;
+            gap: 16px;
+            padding: 16px;
+            border-bottom: 4px solid var(--color-lightblack);
+        }
+        header h1{
+            font-size: var(--header-font-size-h1);
+            margin: 0;
+        }
+        h2{
+            font-size: var(--header-font-size-h2);
+            /* margin: 12px 0; */
+        }
+        h3{
+            font-size: var(--header-font-size-h3);
+            margin: 12px 0;
+        }
+        h4{
+            font-size: var(--header-font-size-h4);
+            margin: 4px 0;
+        }
+        dd ul{
+            padding: 0;
+            margin: 0;
+        }
+
+        @media screen and (max-width: 800px){
+            header{
+                grid-template:  "photo"
+                                "name"
+                                "contacts";
+            }
+            header section{
+                justify-self: center !important;
+                text-align: center;
+            }
+        }
+
+        @media print {
+            .pagebreak{
+                page-break-before: always;
+            }
+            *{
+                --font-main-size: 10pt;
+                --header-font-size-h1: 20pt;
+                --header-font-size-h2: 16pt;
+                --header-font-size-h3: 14pt;
+                --header-font-size-h4: 10pt;
+            }
+            header .photo img{
+                max-height: 120px;
+            }
+        }
+    </style>
+
+    <header>
+        <section class="name">
+            <h1>Гузь Степан Алексеевич</h1>
+            <p>
+                C#-программист, .NET-разработчик<br/>
+                г. Москва, Российская Федерация
+            </p>
+        </section>
+        <section class="contacts">
+            <a href="mailto:gooze.s@proton.me" class="email">gooze.s@proton.me</a>
+            <a href="tel:+79854140015" class="phone">+7 (985) 414-00-15</a>
+            <a href="mailto:guz.sa@rea.ru" class="email">guz.sa@rea.ru</a>
+            <a href="tel:+7495800120#2034" class="phone">+7 (495) 800-12-00, доб. 20-34</a>
+        </section>
+        <section class="photo">
+            <img src="data:image/jpeg;base64,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" />
+        </section>
+    </header>
+    <main>
+        <section>
+            <h2>О себе</h2>
+            <p>
+                Значительный (более шести лет) опыт разработки программного обеспечения на базе платформы Microsoft
+                .NET (включая как .NET Framework 3+, так и современные версии .NET) и языков C# и JavaScript/TypeScript:
+                <ul>
+                    <li>
+                        приложений для рабочего стола (на базе Windows Forms, Windows Presentation Foundation);
+                    </li>
+                    <li>
+                        консольных приложений и служб Windows;
+                    </li>
+                    <li>
+                        веб-приложений на базе ASP.NET/ASP.NET Core; использующих такие фреймворки как 
+                        <!-- описания для этого добра -->
+                        ASP.NET MVC,
+                        Razor Pages, 
+                        Vue.js
+                    </li>
+                    <li>
+                        приложений, интегрированных со сторонними СУБД (MS SQL Server, MySQL/MariaDB, Sqlite)
+                    </li>
+                    <li>
+                        организации взаимодействия приложений через COM и InterOp, а также с использованием C++/CLI.
+                    </li>
+                </ul>
+            </p>
+            <p>
+                Опыт администрирования доменов на базе технологического стека Microsoft и связанных с этим
+                сервисов - локальных доменов Active Directory, облачных служб Azure AD, сервисов Microsoft Office 365.<br/>
+                Свободно использую PowerShell для автоматизации задач администрирования.
+            </p>
+            <p>
+                Свободно читаю и разговариваю на английском языке.<br/>
+                В свободное время увлекаюсь разработкой компьютерных игр, музыкой, ходьбой на длинные дистанции.
+            </p>
+        </section>
+        <section>
+            <h2>Образование</h2>
+            <p>
+                <h3>Российский Экономический Университет им. Г.В. Плеханова</h3>
+                <h4>Бакалавриат, окончен в 2022 году.</h4>
+                <div>
+                    Направление подготовки "Математическое обеспечение и администрирование операционных систем",
+                    Профиль "Системное и интернет-программирование".
+                </div>
+            </p>
+        </section>
+        <section>
+            <h2>Опыт работы</h2>
+            <div>
+                <h3>Российский Экономический Университет им. Г.В. Плеханова</h3>
+                <h4>Старший техник</h4>
+                <dl>
+                    <dt>Трудоустройство</dt>
+                    <dd>с 2016 года по настоящее время</dd>
+                    <dt>Обязанности</dt>
+                    <dd>
+                        Разработка нового, настройка и сопровождение существующего программного обеспечения для 
+                        организации образовательного процесса;
+                        Администрирование и интеграция с сервисами Microsoft, локальными и облачными.
+                    </dd>
+                    <dt>Главные заслуги</dt>
+                    <dd>
+                        <ul>
+                            <li>
+                                Разработка ряда веб-сервисов, в том числе сайта расписания, входящего в число самых 
+                                востребованных сервисов среди студентов и сотрудников вуза;
+                            </li>
+                            <li>
+                                Разработка сервиса для автоматической интеграции внутренней LMS ВУЗа с Microsoft Teams
+                                для организации дистанционных занятий;
+                            </li>
+                            <li>
+                                Организация развёртывания среды дистанционного обучения на базе платформы Moodle 
+                                во время пандемии COVID-19; разработка пакета воспомогательного ПО для упрощения работы 
+                                преподавателей и сотрудников вуза с этой платформой;
+                            </li>
+                            <li>
+                                Разработки комплекса программного обеспечения для информационных терминалов 
+                                на территории вуза (специально подготовленный образ ОС Linux + плагин для браузера
+                                Firefox + веб-интерфейс для отображения информации)
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+            </div>
+        </section>
+        <!-- <section>
+            <h2>Навыки</h2>
+
+        </section> -->
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
